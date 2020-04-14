@@ -2,21 +2,24 @@ import React from "react";
 import Stage from "./Stage";
 import Display from "./Display";
 import StartBtn from "./StartBtn";
-import {createStage} from '../gameHelper'
+import { createStage } from "../gameHelper";
+import {StyledTetrisWrapped,StyledTetris} from '..styled/StyledTetris'
 
 const Tetris = () => {
   return (
-    <div>
-      <Stage stage={createStage()} />
-      <aside>
-        <div>
-          <Display text="Score" />
-          <Display text="Rows" />
-          <Display text="Level" />
+    <StyledTetrisWrapped>
+      <StyledTetris>
+        <Stage stage={createStage()} />
+        <aside>
+          <div>
+            <Display text="Score" />
+            <Display text="Rows" />
+            <Display text="Level" />
           </div>
           <StartBtn />
-      </aside>
-    </div>
+        </aside>
+      </StyledTetris>
+    </StyledTetrisWrapped>
   );
 };
 export default Tetris;
