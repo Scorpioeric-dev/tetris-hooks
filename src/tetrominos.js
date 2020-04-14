@@ -60,7 +60,7 @@ export const Tetrominos = {
 };
 
 
-export const randomTetromino = ( ) =>{
+export const randomTetromino = () =>{
     //Setting variable of Shapes
     const tetrominos = 'IJLOSTZ'
     //Getting a randomized shape from the objects of arrays
