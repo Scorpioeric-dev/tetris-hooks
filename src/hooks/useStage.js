@@ -21,6 +21,11 @@ player.tetrominos.forEach((row,y) =>{
         }
     })
 })
+//Check if we collided
+if(player.collided){
+    resetPlayer()
+}
+
 return newStage
 
 }
