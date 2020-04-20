@@ -4,9 +4,23 @@ import {createStage} from '../gameHelper'
 
 export const useStage = (player , resetPlayer) => {
     const [stage,setStage] = useState(createStage())
+    const [rowsCleared,setRowsCleared] = useState(0)
     
     useEffect(() =>{
-const updateStage = prevStage => {
+        setRowsCleared(0)
+        const sweepRows = newStage => 
+        newStage.reduce((ack,row) => {
+            if(row.findIndex(cell => cell[0] === 0) === -1){
+                setRowsCleared(prev => prev + 1)
+                ack.unshift(new Array(newStage[0].length).fill([0,'clear']))
+                return ack
+            }
+            ack.push(row)
+            return ack
+        },[])
+
+
+        const updateStage = prevStage => {
     //flush the stage 
     const newStage = prevStage.map(row => 
         row.map(cell => (cell[1] === 'clear' ? [0,'clear'] : cell)))
@@ -24,6 +38,7 @@ player.tetrominos.forEach((row,y) =>{
 //Check if we collided
 if(player.collided){
     resetPlayer()
+    return sweepRows(newStage)
 }
 
 return newStage
@@ -32,8 +47,8 @@ return newStage
 
 setStage(prev => updateStage(prev))
 
-    },[player])
+    },[player,resetPlayer])
      
         
-        return [stage,useStage]
+        return [stage,setStage,rowsCleared]
     }
