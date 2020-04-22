@@ -13,7 +13,7 @@ import { usePlayer } from "../hooks/usePlayer";
 import { useGameStatus } from "../hooks/useGameStatus";
 
 const Tetris = () => {
-  console.log(createStage());
+  // console.log(createStage());
   const [dropTime, setDropTime] = useState(null);
   const [gameOver, setGameOver] = useState(false);
 
@@ -32,13 +32,13 @@ const Tetris = () => {
   };
 
   const startGame = () => {
-    // console.log("Starting game");
+    console.log();
     //reset Game
     setStage(createStage());
     setDropTime(1000);
     resetPlayer();
     setGameOver(false);
-    setScore(0);
+    setScore(0)
     setRows(0);
     setLevel(0);
   };
