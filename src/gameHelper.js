@@ -3,7 +3,7 @@ export const Stage_Height = 20;
 
 export const createStage = () =>
   Array.from(Array(Stage_Height), () =>
-    new Array(Stage_Width).fill([0, "clear"])
+     Array(Stage_Width).fill([0, "clear"])
   );
 
 export const checkCollision = (player, stage, { x: moveX, y: moveY }) => {
@@ -26,4 +26,5 @@ export const checkCollision = (player, stage, { x: moveX, y: moveY }) => {
       }
     }
   }
+  return false
 };
