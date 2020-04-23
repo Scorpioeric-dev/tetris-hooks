@@ -71,7 +71,7 @@ const Tetris = () => {
   };
 
   const dropPlayer = () => {
-    console.log("interval off");
+    // console.log("interval off");
     setDropTime(null);
     drop();
   };
@@ -100,7 +100,7 @@ const Tetris = () => {
     <StyledTetrisWrapper
       role="button"
       tabIndex="0"
-      onKeyDown={(e) => move(e)}
+      onKeyDown={e => move(e)}
       onKeyUp={keyUp}
     >
       <StyledTetris>
