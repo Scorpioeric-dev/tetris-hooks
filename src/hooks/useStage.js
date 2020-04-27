@@ -45,11 +45,7 @@ export const useStage = (player, resetPlayer) => {
 
     setStage(prev => updateStage(prev));
   }, [
-    player.collided,
-    player.pos.x,
-    player.pos.y,
-    player.tetrominos,
-    resetPlayer,
+    player,resetPlayer
   ]);
 
   return [stage, setStage, rowsCleared];

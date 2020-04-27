@@ -59,7 +59,7 @@ const Tetris = () => {
         setGameOver(true);
         setDropTime(null);
       }
-      updatePlayerPos({ x: 0, y: 0, collided: true });
+      updatePlayerPos({ x: 0, y: 1, collided: false });
     }
   };
   const keyUp = ({ keyCode }) => {

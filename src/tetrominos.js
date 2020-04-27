@@ -64,7 +64,8 @@ export const randomTetromino = () =>{
     //Setting variable of Shapes
     const tetrominos = 'IJLOSTZ'
     //Getting a randomized shape from the objects of arrays
-    const randTetromino = tetrominos[Math.floor(Math.random() * tetrominos.length)]
+    const randTetromino = 
+    tetrominos[Math.floor(Math.random() * tetrominos.length)]
     //Returning component with the function in the array
     return Tetrominos[randTetromino]
 }

@@ -1,4 +1,5 @@
 import { useState, useCallback } from "react";
+
 import { Tetrominos, randomTetromino } from "../tetrominos";
 import { Stage_Width, checkCollision } from "../gameHelper";
 
@@ -29,7 +30,7 @@ export const usePlayer = () => {
     while (checkCollision(clonedPlayer, stage, { x: 0, y: 0 })) {
       clonedPlayer.pos.x += offset;
       //checks collision on tetrominos
-      offset = - (offset + (offset > 0 ? 1 : -1))
+      offset = -(offset + (offset > 0 ? 1 : -1))
       if(offset > clonedPlayer.tetrominos[0].length){
         rotate(clonedPlayer.tetrominos,-dir)
         clonedPlayer.pos.x = pos
