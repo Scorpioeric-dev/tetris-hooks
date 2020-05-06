@@ -1,5 +1,5 @@
 export const Tetrominos = {
-    //Declaring object with nested arrays utilix=zing shape to define well the shape
+    //Declaring object with nested arrays utilizing shape to define well the shape
   0: { shape: [[0]], color: "0,0,0" },
   I: {
     shape: [
@@ -60,7 +60,7 @@ export const Tetrominos = {
 };
 
 
-export const randomTetromino = () =>{
+export const randomTetromino = () => {
     //Setting variable of Shapes
     const tetrominos = 'IJLOSTZ'
     //Getting a randomized shape from the objects of arrays
